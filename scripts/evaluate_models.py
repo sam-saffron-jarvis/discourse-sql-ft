@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path('/home/agent/work/discourse-sql-ft')
 DB = 'discourse_sql_ft'
 BASE_MODEL = 'Qwen/Qwen3.5-9B'
-ADAPTER = ROOT / 'training/qwen35-9b-lora/adapter'
+DEFAULT_ADAPTER = ROOT / 'training/qwen35-9b-lora/adapter'
 SCHEMA = (ROOT / 'config/schema.txt').read_text()
 SYSTEM = 'You translate English questions about a Discourse PostgreSQL database into safe read-only PostgreSQL SQL. Output only SQL. No Markdown. No explanation. Use only the provided schema.'
 FORBIDDEN = re.compile(r"\b(insert|update|delete|drop|alter|create|truncate|copy|grant|revoke|call|do|merge|vacuum|analyze)\b", re.I)
@@ -91,7 +91,7 @@ def result_match(a, b) -> bool:
     return normalize_result(a) == normalize_result(b)
 
 
-def generate_all(model_label: str, adapter: bool, rows, out_dir: Path):
+def generate_all(model_label: str, adapter: bool, rows, out_dir: Path, adapter_path: Path = DEFAULT_ADAPTER):
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
     if adapter:
@@ -101,13 +101,13 @@ def generate_all(model_label: str, adapter: bool, rows, out_dir: Path):
     details_path = out_dir / 'details.jsonl'
     summary_path = out_dir / 'summary.json'
 
-    tokenizer = AutoTokenizer.from_pretrained(str(ADAPTER) if adapter else BASE_MODEL, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(str(adapter_path) if adapter else BASE_MODEL, trust_remote_code=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     bnb = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type='nf4', bnb_4bit_compute_dtype=torch.bfloat16, bnb_4bit_use_double_quant=True)
     model = AutoModelForCausalLM.from_pretrained(BASE_MODEL, quantization_config=bnb, device_map='auto', trust_remote_code=True, torch_dtype=torch.bfloat16)
     if adapter:
-        model = PeftModel.from_pretrained(model, str(ADAPTER))
+        model = PeftModel.from_pretrained(model, str(adapter_path))
     model.eval()
 
     completed = []
@@ -165,15 +165,19 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--limit', type=int, default=200)
     ap.add_argument('--only', choices=['base', 'tuned', 'both'], default='both')
+    ap.add_argument('--adapter', type=Path, default=DEFAULT_ADAPTER, help='LoRA adapter path for tuned eval')
+    ap.add_argument('--out-root', type=Path, default=ROOT / 'eval' / 'execution', help='Execution eval output root')
+    ap.add_argument('--tuned-dir-name', default='tuned', help='Subdirectory name under out-root for tuned results')
+    ap.add_argument('--report', type=Path, default=ROOT / 'reports' / 'execution_eval.md', help='Markdown report path')
     args = ap.parse_args()
     rows = load_eval(args.limit)
-    out_root = ROOT / 'eval' / 'execution'
+    out_root = args.out_root
     out_root.mkdir(parents=True, exist_ok=True)
     summaries = {}
     if args.only in ('base', 'both'):
-        summaries['base'] = generate_all('base', False, rows, out_root / 'base')
+        summaries['base'] = generate_all('base', False, rows, out_root / 'base', args.adapter)
     if args.only in ('tuned', 'both'):
-        summaries['tuned'] = generate_all('tuned', True, rows, out_root / 'tuned')
+        summaries['tuned'] = generate_all('tuned', True, rows, out_root / args.tuned_dir_name, args.adapter)
     comp = {'limit': len(rows), 'summaries': summaries}
     if 'base' in summaries and 'tuned' in summaries:
         b, t = summaries['base'], summaries['tuned']
@@ -181,7 +185,8 @@ def main():
         comp['base_exact_rate'] = b['exact'] / b['total'] if b['total'] else 0
         comp['tuned_exact_rate'] = t['exact'] / t['total'] if t['total'] else 0
     (out_root / 'comparison.json').write_text(json.dumps(comp, indent=2) + '\n')
-    (ROOT / 'reports' / 'execution_eval.md').write_text('# Execution Eval\n\n```json\n' + json.dumps(comp, indent=2) + '\n```\n')
+    args.report.parent.mkdir(parents=True, exist_ok=True)
+    args.report.write_text('# Execution Eval\n\n```json\n' + json.dumps(comp, indent=2) + '\n```\n')
     print(json.dumps(comp, indent=2))
 
 if __name__ == '__main__':
