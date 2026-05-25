@@ -3,13 +3,14 @@
 - Experiment: `discourse-sql-ft`
 - Status: **succeeded**
 - Current phase: `None`
-- Updated: `2026-05-25T02:24:05Z` UTC
+- Updated: `2026-05-25T02:36:06Z` UTC
 - Execution eval: **completed** — base exact 0/200, tuned exact 199/200
 - Coverage expansion: **completed** — train rows 2500 → 3130; schema base table coverage 11/311 → 311/311
 - Built-in reports/queries: **completed** — train rows 3138 → 3205; added 19 Data Explorer defaults + 48 Discourse core report examples
 - Source-mined semantics: **completed** — train rows 3205 → 3241; added 36 examples from badge/tagging/topic-view/statistics/reactions/voting/custom-field/email/upload/group/auth source concepts
-- Action type semantics: **completed** — train rows 3241 → 3269; added 28 examples for `post_actions`, `post_action_types`, `flags`, and `user_actions` mappings from Discourse source; validated all 3269 train SQL queries read-only.
-- Dataset formatting: **completed** — prettified SQL in `dataset/train.jsonl` and component training packs; latest full validation: 3269 train SQL queries, 0 failures.
+- Action type semantics: **completed** — train rows 3241 → 3269; added 28 examples for `post_actions`, `post_action_types`, `flags`, and `user_actions` mappings from Discourse source.
+- Topic view stats semantics: **completed** — train rows 3269 → 3281; added 12 examples for `topic_view_stats` page views per topic, anonymous/logged-in splits, daily topic stats, category filtering, and source-style report shape.
+- Dataset formatting: **completed** — prettified SQL consistently across tracked dataset JSONL files and the new topic-view-stats pack; latest full validation: 3281 train SQL queries, 0 failures.
 
 | Phase | Status | Attempts | Started | Finished | Error |
 |---|---:|---:|---|---|---|

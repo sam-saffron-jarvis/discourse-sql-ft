@@ -18,7 +18,7 @@ def prettify_sql(sql: str) -> str:
         sql,
         keyword_case="upper",
         identifier_case=None,
-        reindent=True,
+        reindent_aligned=True,
         indent_width=2,
         wrap_after=88,
         strip_comments=False,
