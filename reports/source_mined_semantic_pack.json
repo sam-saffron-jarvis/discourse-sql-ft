@@ -1,0 +1,15 @@
+{
+  "candidates": 36,
+  "added": 35,
+  "rejected": 1,
+  "pack": "/home/agent/work/discourse-sql-ft/dataset/source_mined_semantic_pack.jsonl",
+  "rejections": [
+    {
+      "source": "post_voting",
+      "question": "Which posts have the highest post-voting score?",
+      "sql": "SELECT p.id AS post_id, t.title, SUM(pvv.direction) AS vote_score FROM post_voting_votes pvv JOIN posts p ON p.id=pvv.votable_id AND pvv.votable_type='Post' JOIN topics t ON t.id=p.topic_id WHERE p.deleted_at IS NULL AND t.deleted_at IS NULL GROUP BY p.id, t.title ORDER BY vote_score DESC NULLS LAST, p.id LIMIT 20;",
+      "error": "ERROR:  function sum(character varying) does not exist\nLINE 1: ...onb)::text FROM (SELECT p.id AS post_id, t.title, SUM(pvv.di...\n                                                             ^\nHINT:  No function matches the given name and argument types. You might need to add explicit type casts.\n"
+    }
+  ],
+  "finished_at": "2026-05-25T00:34:58Z"
+}

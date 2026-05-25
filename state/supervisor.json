@@ -1,0 +1,59 @@
+{
+  "experiment": "discourse-sql-ft",
+  "status": "succeeded",
+  "current_phase": null,
+  "started_at": "2026-05-24T10:50:41Z",
+  "updated_at": "2026-05-24T23:28:19Z",
+  "finished_at": "2026-05-24T23:28:19Z",
+  "last_error": null,
+  "phases": {
+    "preflight": {
+      "status": "succeeded",
+      "started_at": "2026-05-24T10:50:41Z",
+      "finished_at": "2026-05-24T10:50:41Z",
+      "attempts": 1,
+      "last_run_log": "logs/preflight.log",
+      "error": null
+    },
+    "build_forum": {
+      "status": "succeeded",
+      "started_at": "2026-05-24T11:23:34Z",
+      "finished_at": "2026-05-24T13:21:11Z",
+      "attempts": 8,
+      "last_run_log": "logs/build_forum.log",
+      "error": null
+    },
+    "generate_dataset": {
+      "status": "succeeded",
+      "started_at": "2026-05-24T13:23:53Z",
+      "finished_at": "2026-05-24T13:23:57Z",
+      "attempts": 2,
+      "last_run_log": "logs/generate_dataset.log",
+      "error": null
+    },
+    "baseline_eval": {
+      "status": "succeeded",
+      "started_at": "2026-05-24T13:23:57Z",
+      "finished_at": "2026-05-24T13:23:57Z",
+      "attempts": 1,
+      "last_run_log": "logs/baseline_eval.log",
+      "error": null
+    },
+    "finetune": {
+      "status": "succeeded",
+      "started_at": "2026-05-24T23:01:10Z",
+      "finished_at": "2026-05-24T23:28:19Z",
+      "attempts": 3,
+      "last_run_log": "logs/finetune.log",
+      "error": null
+    },
+    "final_eval": {
+      "status": "succeeded",
+      "started_at": "2026-05-24T23:28:19Z",
+      "finished_at": "2026-05-24T23:28:19Z",
+      "attempts": 1,
+      "last_run_log": "logs/final_eval.log",
+      "error": null
+    }
+  }
+}

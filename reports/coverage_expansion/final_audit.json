@@ -1,0 +1,9 @@
+{
+  "train_rows": 3130,
+  "schema_base_tables": 311,
+  "covered_tables": 311,
+  "missing_tables": [],
+  "semantic_pack_rows": 30,
+  "coverage_expansion_rows": 597,
+  "repair_rows": 3
+}

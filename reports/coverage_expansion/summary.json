@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-05-25T00:15:25Z",
+  "finished_at": "2026-05-25T00:15:33Z",
+  "total_schema_tables": 311,
+  "train_tables_covered_before": 11,
+  "train_tables_covered_after": 311,
+  "any_split_tables_covered_before": 11,
+  "any_split_tables_covered_after": 311,
+  "missing_train_before": 300,
+  "missing_train_after": 0,
+  "missing_any_before": 300,
+  "missing_any_after": 0,
+  "examples_added_to_train": 597,
+  "tables_targeted": 300,
+  "tables_with_source_hits": 290,
+  "rejected_examples": 3,
+  "backup": "/home/agent/work/discourse-sql-ft/dataset/train.before-coverage-expansion.1779668133.jsonl",
+  "expansion_path": "/home/agent/work/discourse-sql-ft/dataset/coverage_expansion.jsonl",
+  "missing_train_after_tables": [],
+  "missing_any_after_tables": []
+}

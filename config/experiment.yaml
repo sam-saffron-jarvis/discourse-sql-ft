@@ -1,0 +1,55 @@
+experiment:
+  name: discourse-sql-ft
+  root: /home/agent/work/discourse-sql-ft
+  timezone: Australia/Sydney
+
+model:
+  primary: Qwen/Qwen3.5-9B
+  fallback: Qwen/Qwen3.5-9B-Base
+  optional_baselines:
+    - Qwen/Qwen3-Coder-30B-A3B-Instruct
+    - Qwen/Qwen3-Coder-Next
+  method: qlora
+  max_seq_len: 4096
+  lora_rank: 32
+  lora_alpha: 64
+  lora_dropout: 0.05
+  learning_rate: 0.0001
+  epochs: 3
+
+data:
+  users: 500
+  topics: 1000
+  posts_min: 8000
+  posts_max: 15000
+  categories: 12
+  tags: 60
+
+dataset:
+  train_target: 2500
+  dev_target: 200
+  eval_target: 200
+
+eval:
+  statement_timeout_ms: 3000
+  max_rows: 1000
+  compare_results: true
+
+phases:
+  - preflight
+  - build_forum
+  - generate_dataset
+  - baseline_eval
+  - finetune
+  - final_eval
+
+paths:
+  schema: config/schema.txt
+  db_snapshot: db/snapshots/synthetic-forum.sql.gz
+  train: dataset/train.jsonl
+  dev: dataset/dev.jsonl
+  eval: dataset/eval.jsonl
+  canonical_eval: dataset/canonical_eval.jsonl
+  baseline_results: eval/baseline/results.json
+  tuned_results: eval/tuned/results.json
+  adapter_dir: training/qwen35-9b-lora/adapter

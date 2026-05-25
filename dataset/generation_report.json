@@ -1,0 +1,29 @@
+{
+  "valid": 673,
+  "invalid": 0,
+  "train": 2500,
+  "dev": 200,
+  "eval": 200,
+  "families": [
+    "category_avg",
+    "category_counts",
+    "category_likes",
+    "category_users",
+    "chat_activity",
+    "chat_search",
+    "moderation",
+    "no_replies",
+    "pms",
+    "post_search",
+    "reactions",
+    "tag_categories",
+    "tag_counts",
+    "title_search",
+    "top_liked_topics",
+    "top_posters",
+    "user_chat",
+    "user_likes",
+    "user_posts"
+  ],
+  "invalid_sample": []
+}

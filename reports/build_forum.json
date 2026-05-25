@@ -1,0 +1,19 @@
+{
+  "db_name": "discourse_sql_ft",
+  "db_dump": "/home/agent/work/discourse-sql-ft/db/snapshots/synthetic-forum.sql.gz",
+  "schema": "/home/agent/work/discourse-sql-ft/config/schema.txt",
+  "counts": {
+    "users": 502,
+    "categories": 16,
+    "tags": 43,
+    "topics": 1118,
+    "posts": 13528,
+    "private_messages": 100,
+    "post_actions": 27014,
+    "likes": 27014,
+    "reaction_users": 2500,
+    "chat_channels": 29,
+    "chat_messages": 1500,
+    "chat_message_reactions": 1122
+  }
+}

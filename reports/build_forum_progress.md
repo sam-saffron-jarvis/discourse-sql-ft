@@ -1,0 +1,30 @@
+# Build Forum Progress
+
+- `2026-05-24T11:23:34Z` Starting build_forum: real Discourse install, migration, and synthetic forum seeding
+- `2026-05-24T11:23:34Z` RUN pacman -Q postgresql
+- `2026-05-24T11:23:34Z` RUN pacman -Q postgresql-libs
+- `2026-05-24T11:23:34Z` RUN pacman -Q redis
+- `2026-05-24T11:23:34Z` System packages already installed
+- `2026-05-24T11:23:34Z` RUN sudo -n install -d -m 700 -o postgres -g postgres /var/lib/postgres/data
+- `2026-05-24T11:23:34Z` RUN sudo -n install -d -m 775 -o postgres -g postgres /run/postgresql
+- `2026-05-24T11:23:34Z` RUN sudo -n -u postgres /usr/bin/test -s /var/lib/postgres/data/PG_VERSION
+- `2026-05-24T11:23:34Z` RUN sudo -n -u postgres pg_ctl -D /var/lib/postgres/data status
+- `2026-05-24T11:23:34Z` PostgreSQL already running
+- `2026-05-24T11:23:34Z` RUN sudo -n -u postgres psql -tAc 'SELECT 1 FROM pg_roles WHERE rolname='"'"'agent'"'"''
+- `2026-05-24T11:23:34Z` RUN sudo -n -u postgres psql -tAc 'SELECT 1 FROM pg_database WHERE datname='"'"'discourse_sql_ft'"'"''
+- `2026-05-24T11:23:34Z` RUN psql -d postgres -Atc 'SELECT default_version FROM pg_available_extensions WHERE name='"'"'vector'"'"''
+- `2026-05-24T11:23:34Z` pgvector available version 0.8.2
+- `2026-05-24T11:23:34Z` RUN redis-cli ping
+- `2026-05-24T11:23:34Z` Redis already running
+- `2026-05-24T11:23:34Z` Using existing Discourse worktree /home/agent/worktrees/discourse-sql-ft
+- `2026-05-24T11:23:34Z` RUN git status --short
+- `2026-05-24T11:23:34Z` RUN bundle config set --local path /home/agent/work/discourse-sql-ft/vendor/bundle
+- `2026-05-24T11:23:34Z` RUN bundle config set --local without 'test generic_import migrations'
+- `2026-05-24T11:23:35Z` RUN bundle check
+- `2026-05-24T11:23:35Z` Bundle already satisfied
+- `2026-05-24T11:23:35Z` pnpm dependencies already installed
+- `2026-05-24T11:23:35Z` Resetting real Discourse development DB discourse_sql_ft
+- `2026-05-24T11:23:35Z` RUN dropdb --if-exists discourse_sql_ft
+- `2026-05-24T11:23:35Z` RUN createdb discourse_sql_ft
+- `2026-05-24T11:23:35Z` RUN bundle exec rails db:migrate
+- `2026-05-24T11:23:57Z` RUN bundle exec rails runner /home/agent/work/discourse-sql-ft/scripts/phases/seed_synthetic_forum.rb

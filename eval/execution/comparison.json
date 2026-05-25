@@ -1,0 +1,32 @@
+{
+  "limit": 200,
+  "summaries": {
+    "base": {
+      "model": "base",
+      "total": 200,
+      "safe": 200,
+      "exec_ok": 154,
+      "exact": 0,
+      "started_at": "2026-05-24T23:48:42Z",
+      "updated_at": "2026-05-24T23:53:13Z",
+      "finished_at": "2026-05-24T23:53:13Z"
+    },
+    "tuned": {
+      "model": "tuned",
+      "total": 200,
+      "safe": 200,
+      "exec_ok": 200,
+      "exact": 199,
+      "started_at": "2026-05-24T23:59:26Z",
+      "updated_at": "2026-05-25T00:01:35Z",
+      "finished_at": "2026-05-25T00:01:35Z"
+    }
+  },
+  "delta_exact": 199,
+  "base_exact_rate": 0.0,
+  "tuned_exact_rate": 0.995,
+  "base_exec_rate": 0.77,
+  "tuned_exec_rate": 1.0,
+  "base_safe_rate": 1.0,
+  "tuned_safe_rate": 1.0
+}

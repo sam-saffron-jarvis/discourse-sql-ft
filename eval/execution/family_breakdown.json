@@ -1,0 +1,234 @@
+{
+  "base": {
+    "category_avg": {
+      "total": 4,
+      "safe": 4,
+      "exec_ok": 4,
+      "exact": 0
+    },
+    "category_counts": {
+      "total": 7,
+      "safe": 7,
+      "exec_ok": 7,
+      "exact": 0
+    },
+    "category_likes": {
+      "total": 1,
+      "safe": 1,
+      "exec_ok": 1,
+      "exact": 0
+    },
+    "category_users": {
+      "total": 10,
+      "safe": 10,
+      "exec_ok": 10,
+      "exact": 0
+    },
+    "chat_activity": {
+      "total": 6,
+      "safe": 6,
+      "exec_ok": 4,
+      "exact": 0
+    },
+    "chat_search": {
+      "total": 5,
+      "safe": 5,
+      "exec_ok": 5,
+      "exact": 0
+    },
+    "moderation": {
+      "total": 2,
+      "safe": 2,
+      "exec_ok": 2,
+      "exact": 0
+    },
+    "no_replies": {
+      "total": 1,
+      "safe": 1,
+      "exec_ok": 1,
+      "exact": 0
+    },
+    "pms": {
+      "total": 1,
+      "safe": 1,
+      "exec_ok": 0,
+      "exact": 0
+    },
+    "post_search": {
+      "total": 5,
+      "safe": 5,
+      "exec_ok": 5,
+      "exact": 0
+    },
+    "reactions": {
+      "total": 4,
+      "safe": 4,
+      "exec_ok": 0,
+      "exact": 0
+    },
+    "tag_categories": {
+      "total": 27,
+      "safe": 27,
+      "exec_ok": 9,
+      "exact": 0
+    },
+    "tag_counts": {
+      "total": 24,
+      "safe": 24,
+      "exec_ok": 17,
+      "exact": 0
+    },
+    "title_search": {
+      "total": 5,
+      "safe": 5,
+      "exec_ok": 5,
+      "exact": 0
+    },
+    "top_liked_topics": {
+      "total": 11,
+      "safe": 11,
+      "exec_ok": 11,
+      "exact": 0
+    },
+    "top_posters": {
+      "total": 13,
+      "safe": 13,
+      "exec_ok": 13,
+      "exact": 0
+    },
+    "user_chat": {
+      "total": 25,
+      "safe": 25,
+      "exec_ok": 22,
+      "exact": 0
+    },
+    "user_likes": {
+      "total": 25,
+      "safe": 25,
+      "exec_ok": 22,
+      "exact": 0
+    },
+    "user_posts": {
+      "total": 24,
+      "safe": 24,
+      "exec_ok": 16,
+      "exact": 0
+    }
+  },
+  "tuned": {
+    "category_avg": {
+      "total": 4,
+      "safe": 4,
+      "exec_ok": 4,
+      "exact": 4
+    },
+    "category_counts": {
+      "total": 7,
+      "safe": 7,
+      "exec_ok": 7,
+      "exact": 7
+    },
+    "category_likes": {
+      "total": 1,
+      "safe": 1,
+      "exec_ok": 1,
+      "exact": 1
+    },
+    "category_users": {
+      "total": 10,
+      "safe": 10,
+      "exec_ok": 10,
+      "exact": 10
+    },
+    "chat_activity": {
+      "total": 6,
+      "safe": 6,
+      "exec_ok": 6,
+      "exact": 6
+    },
+    "chat_search": {
+      "total": 5,
+      "safe": 5,
+      "exec_ok": 5,
+      "exact": 5
+    },
+    "moderation": {
+      "total": 2,
+      "safe": 2,
+      "exec_ok": 2,
+      "exact": 2
+    },
+    "no_replies": {
+      "total": 1,
+      "safe": 1,
+      "exec_ok": 1,
+      "exact": 0
+    },
+    "pms": {
+      "total": 1,
+      "safe": 1,
+      "exec_ok": 1,
+      "exact": 1
+    },
+    "post_search": {
+      "total": 5,
+      "safe": 5,
+      "exec_ok": 5,
+      "exact": 5
+    },
+    "reactions": {
+      "total": 4,
+      "safe": 4,
+      "exec_ok": 4,
+      "exact": 4
+    },
+    "tag_categories": {
+      "total": 27,
+      "safe": 27,
+      "exec_ok": 27,
+      "exact": 27
+    },
+    "tag_counts": {
+      "total": 24,
+      "safe": 24,
+      "exec_ok": 24,
+      "exact": 24
+    },
+    "title_search": {
+      "total": 5,
+      "safe": 5,
+      "exec_ok": 5,
+      "exact": 5
+    },
+    "top_liked_topics": {
+      "total": 11,
+      "safe": 11,
+      "exec_ok": 11,
+      "exact": 11
+    },
+    "top_posters": {
+      "total": 13,
+      "safe": 13,
+      "exec_ok": 13,
+      "exact": 13
+    },
+    "user_chat": {
+      "total": 25,
+      "safe": 25,
+      "exec_ok": 25,
+      "exact": 25
+    },
+    "user_likes": {
+      "total": 25,
+      "safe": 25,
+      "exec_ok": 25,
+      "exact": 25
+    },
+    "user_posts": {
+      "total": 24,
+      "safe": 24,
+      "exec_ok": 24,
+      "exact": 24
+    }
+  }
+}

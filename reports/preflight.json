@@ -1,0 +1,129 @@
+{
+  "checks": [
+    {
+      "status": "ok",
+      "item": "root",
+      "detail": "/home/agent/work/discourse-sql-ft"
+    },
+    {
+      "status": "ok",
+      "item": "python",
+      "detail": "3.12.12 at /home/agent/work/discourse-sql-ft/.venv/bin/python3"
+    },
+    {
+      "status": "ok",
+      "item": "command:uv",
+      "detail": "/usr/bin/uv"
+    },
+    {
+      "status": "ok",
+      "item": "command:python",
+      "detail": "/home/agent/work/discourse-sql-ft/.venv/bin/python"
+    },
+    {
+      "status": "warn",
+      "item": "command:psql",
+      "detail": "not found in PATH"
+    },
+    {
+      "status": "warn",
+      "item": "command:pg_dump",
+      "detail": "not found in PATH"
+    },
+    {
+      "status": "ok",
+      "item": "command:git",
+      "detail": "/usr/bin/git"
+    },
+    {
+      "status": "ok",
+      "item": "command:curl",
+      "detail": "/usr/bin/curl"
+    },
+    {
+      "status": "ok",
+      "item": "command:nvidia-smi",
+      "detail": "/usr/bin/nvidia-smi"
+    },
+    {
+      "status": "ok",
+      "item": "gpu:0",
+      "detail": "NVIDIA GeForce RTX 4090; 21.8/24.0 GiB free; driver 595.71.05"
+    },
+    {
+      "status": "ok",
+      "item": "disk space",
+      "detail": "1674.5 GiB free / 3602.0 GiB total at /home/agent/work/discourse-sql-ft"
+    },
+    {
+      "status": "ok",
+      "item": "python module:yaml",
+      "detail": "importable"
+    },
+    {
+      "status": "warn",
+      "item": "python module:torch",
+      "detail": "not installed yet"
+    },
+    {
+      "status": "warn",
+      "item": "python module:transformers",
+      "detail": "not installed yet"
+    },
+    {
+      "status": "warn",
+      "item": "python module:peft",
+      "detail": "not installed yet"
+    },
+    {
+      "status": "warn",
+      "item": "python module:trl",
+      "detail": "not installed yet"
+    },
+    {
+      "status": "warn",
+      "item": "python module:datasets",
+      "detail": "not installed yet"
+    },
+    {
+      "status": "warn",
+      "item": "python module:accelerate",
+      "detail": "not installed yet"
+    },
+    {
+      "status": "warn",
+      "item": "python module:bitsandbytes",
+      "detail": "not installed yet"
+    },
+    {
+      "status": "ok",
+      "item": "jobs supervisor registration",
+      "detail": "discourse-sql-ft-supervisor exists"
+    },
+    {
+      "status": "ok",
+      "item": "ollama qwen models",
+      "detail": "qwen36-a3b-q3-180224:latest      f93dbe4be007    16 GB     4 weeks ago     ; qwen36-a3b-q3-163840:latest      656c29d3d535    16 GB     4 weeks ago     ; qwen36-a3b-q3-229376:latest      a32350c4fac4    16 GB     4 weeks ago     "
+    },
+    {
+      "status": "ok",
+      "item": "primary model",
+      "detail": "Qwen/Qwen3.5-9B"
+    },
+    {
+      "status": "ok",
+      "item": "fallback model",
+      "detail": "Qwen/Qwen3.5-9B-Base"
+    },
+    {
+      "status": "ok",
+      "item": "uv version",
+      "detail": "uv 0.11.16 (135a36367 2026-05-21 x86_64-unknown-linux-gnu)"
+    },
+    {
+      "status": "ok",
+      "item": "nvidia-smi version",
+      "detail": "NVIDIA-SMI version  : 595.71.05"
+    }
+  ]
+}

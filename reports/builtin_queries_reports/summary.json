@@ -1,0 +1,10 @@
+{
+  "started_finished_at": "2026-05-25T00:30:10Z",
+  "data_explorer_defaults_seen": 19,
+  "core_report_candidates": 48,
+  "examples_added": 64,
+  "data_explorer_added": 19,
+  "core_reports_added": 45,
+  "rejected": 3,
+  "pack": "/home/agent/work/discourse-sql-ft/dataset/builtin_queries_reports_pack.jsonl"
+}

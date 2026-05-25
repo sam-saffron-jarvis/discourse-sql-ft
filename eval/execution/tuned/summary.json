@@ -1,0 +1,10 @@
+{
+  "model": "tuned",
+  "total": 200,
+  "safe": 200,
+  "exec_ok": 200,
+  "exact": 199,
+  "started_at": "2026-05-24T23:59:26Z",
+  "updated_at": "2026-05-25T00:01:35Z",
+  "finished_at": "2026-05-25T00:01:35Z"
+}

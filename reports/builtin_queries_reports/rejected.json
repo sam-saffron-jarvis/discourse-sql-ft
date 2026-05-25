@@ -1,0 +1,20 @@
+[
+  {
+    "source": "core_report",
+    "name": "suspicious_logins",
+    "sql": "SELECT id, user_id, client_ip, location, created_at FROM user_auth_token_logs ORDER BY created_at DESC LIMIT 20;",
+    "error": "ERROR:  column \"location\" does not exist\nLINE 1: ...jsonb)::text FROM (SELECT id, user_id, client_ip, location, ...\n                                                             ^\nHINT:  Perhaps you meant to reference the column \"user_auth_token_logs.action\".\n"
+  },
+  {
+    "source": "core_report",
+    "name": "top_referred_topics",
+    "sql": "SELECT t.id, t.title, SUM(il.clicks) AS clicks FROM incoming_links il JOIN topics t ON t.id=il.topic_id WHERE t.deleted_at IS NULL GROUP BY t.id, t.title ORDER BY clicks DESC NULLS LAST, t.id LIMIT 20;",
+    "error": "ERROR:  column il.topic_id does not exist\nLINE 1: ...icks FROM incoming_links il JOIN topics t ON t.id=il.topic_i...\n                                                             ^\n"
+  },
+  {
+    "source": "core_report",
+    "name": "top_traffic_sources",
+    "sql": "SELECT domain, SUM(incoming_links_count) AS incoming_links_count FROM incoming_domains GROUP BY domain ORDER BY incoming_links_count DESC NULLS LAST, domain LIMIT 20;",
+    "error": "ERROR:  column \"domain\" does not exist\nLINE 1: ...agg(to_jsonb(q)), '[]'::jsonb)::text FROM (SELECT domain, SU...\n                                                             ^\n"
+  }
+]

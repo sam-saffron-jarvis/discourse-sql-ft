@@ -1,0 +1,8 @@
+[project]
+name = "discourse-sql-ft"
+version = "0.1.0"
+description = "Synthetic Discourse text-to-SQL fine-tuning experiment supervisor"
+requires-python = ">=3.11"
+dependencies = [
+  "pyyaml>=6.0.2",
+]

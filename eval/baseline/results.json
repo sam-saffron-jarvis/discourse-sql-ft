@@ -1,0 +1,6 @@
+{
+  "status": "skipped_for_overnight_speed",
+  "reason": "baseline model serving not wired yet; prioritizing fine-tune before morning",
+  "eval_items": 200,
+  "created_at": "2026-05-24T13:23:57Z"
+}

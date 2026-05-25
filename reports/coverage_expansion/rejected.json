@@ -1,0 +1,20 @@
+[
+  {
+    "table": "direct_message_channels",
+    "question": "Show the 20 most recent direct message channels records.",
+    "sql": "SELECT id, created_at, updated_at, group FROM direct_message_channels ORDER BY created_at DESC LIMIT 20;",
+    "reason": "ERROR:  syntax error at or near \"group\"\nLINE 1: ...b)::text FROM (SELECT id, created_at, updated_at, group FROM...\n                                                             ^\n"
+  },
+  {
+    "table": "user_emails",
+    "question": "Show the 20 most recent user emails records.",
+    "sql": "SELECT id, email, user_id, created_at, updated_at, primary FROM user_emails ORDER BY created_at DESC LIMIT 20;",
+    "reason": "ERROR:  syntax error at or near \"primary\"\nLINE 1: ...ELECT id, email, user_id, created_at, updated_at, primary FR...\n                                                             ^\n"
+  },
+  {
+    "table": "web_hook_event_types",
+    "question": "Show the 20 most recent web hook event types records.",
+    "sql": "SELECT id, name, group FROM web_hook_event_types ORDER BY id DESC LIMIT 20;",
+    "reason": "ERROR:  syntax error at or near \"group\"\nLINE 1: ...nb(q)), '[]'::jsonb)::text FROM (SELECT id, name, group FROM...\n                                                             ^\n"
+  }
+]

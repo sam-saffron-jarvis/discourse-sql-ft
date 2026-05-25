@@ -1,0 +1,54 @@
+# Python / uv
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Ruby/JS vendored dependencies
+vendor/bundle/
+node_modules/
+.pnpm-store/
+
+# Large/generated model artifacts
+training/**/adapter/
+training/**/checkpoints/
+training/**/*.safetensors
+training/**/*.bin
+training/**/*.pt
+training/**/*.pth
+training/**/*.gguf
+models/
+
+# Runtime/database artifacts
+db/snapshots/
+*.sql
+*.sql.gz
+dump.rdb
+*.rdb
+*.sqlite
+*.sqlite3
+
+# Logs and transient state
+logs/
+*.log
+state/*.lock
+
+# Local/editor noise
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
+
+# Keep generated datasets/reports intentionally tracked.
+!dataset/*.jsonl
+!dataset/*.json
+!reports/**/*.md
+!reports/**/*.json
+
+# But do not keep local backups/provenance dumps with machine paths.
+dataset/*.before-*.jsonl
+reports/**/source_hits.json
+state/locks/

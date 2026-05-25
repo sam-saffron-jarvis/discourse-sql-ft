@@ -1,0 +1,6 @@
+{
+  "status": "adapter_exists",
+  "adapter": "/home/agent/work/discourse-sql-ft/training/qwen35-9b-lora/adapter",
+  "eval_items": 200,
+  "created_at": "2026-05-24T23:28:19Z"
+}
