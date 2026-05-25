@@ -18,6 +18,8 @@ training/**/*.bin
 training/**/*.pt
 training/**/*.pth
 training/**/*.gguf
+training/**/done
+training/**/failed
 models/
 
 # Runtime/database artifacts
